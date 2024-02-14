@@ -163,6 +163,7 @@ include_directories(
 # )
 catkin_install_python(PROGRAMS
   src/generate_matrixes.py
+  src/fk_antropomorphic_arm.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

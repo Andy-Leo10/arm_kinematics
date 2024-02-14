@@ -5,6 +5,7 @@ The main objectives of this project are:
 - Do the forward kinematics
 - Do the inverse kinematics
 
+---
 ## Setup the project
 
 ### Launch simulation
