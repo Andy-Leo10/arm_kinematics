@@ -79,7 +79,7 @@ input_tetha_2 = input("Enter the value for theta_2: ")
 input_tetha_3 = input("Enter the value for theta_3: ")
 
 A03_evaluated = A03_simplify.subs(theta_1, input_tetha_1).subs(theta_2, input_tetha_2).subs(theta_3, input_tetha_3)
-preview(A03_simplify, viewer='file', filename="A03_simplify_evaluated.png", dvioptions=['-D','300'])
+preview(A03_evaluated, viewer='file', filename="A03_simplify_evaluated.png", dvioptions=['-D','300'])
 
 print("Position Matrix:", A03_evaluated[0:3,3])
 print("Orientation Matrix:", A03_evaluated[0:3,0:3])
