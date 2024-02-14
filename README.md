@@ -43,3 +43,12 @@ The main objectives of this project are:
 ### Task 4
 
     roslaunch antropomorphic_project start_elipsoidal_motion.launch
+
+---
+## Denavit-Hartenberg
+
+| link | r   | alpha | d   | theta   |
+|------|-----|-------|-----|---------|
+| 1    | 0   | π/2   | l_1 | θ_1     |
+| 2    | l_2 | 0     | 0   | θ_2     |
+| 3    | l_3 | 0     | 0   | θ_3     |
