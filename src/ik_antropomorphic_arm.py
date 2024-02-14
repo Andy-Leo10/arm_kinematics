@@ -65,6 +65,7 @@ theta3_plus_2 = normalize_angle(theta3_plus_2)
 
 theta2_nega_2 = -pi + abs(theta2_nega)
 theta2_nega_2 = normalize_angle(theta2_nega_2)
+theta2_nega_2 = mirror_angle(theta2_nega_2)
 theta3_nega_2 = -theta3_nega
 theta3_nega_2 = normalize_angle(theta3_nega_2)
 
