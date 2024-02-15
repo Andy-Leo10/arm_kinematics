@@ -5,6 +5,10 @@ The main objectives of this project are:
 - Do the forward kinematics
 - Do the inverse kinematics
 
+
+https://github.com/Andy-Leo10/arm_kinematics/assets/60716487/032fe988-ace5-4866-9d03-42c2e813a0fd
+
+
 ---
 ## Setup the project
 
@@ -43,6 +47,8 @@ The main objectives of this project are:
 ### Task 4
 
     roslaunch antropomorphic_project start_elipsoidal_motion.launch
+
+![imagen](https://github.com/Andy-Leo10/arm_kinematics/assets/60716487/eab46fa5-893c-4e6c-8918-3670153431e2)
 
 ---
 ## Denavit-Hartenberg
