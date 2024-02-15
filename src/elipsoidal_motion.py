@@ -66,7 +66,7 @@ class EE_Client(object):
 
             # We set this by default, if not possible soltion
             # The movier will try the other options
-            elbow_policy = "plus-minus"
+            elbow_policy = "down"
 
             ee_msg.ee_xy_theta = ee_pose
             ee_msg.elbow_policy.data = elbow_policy
