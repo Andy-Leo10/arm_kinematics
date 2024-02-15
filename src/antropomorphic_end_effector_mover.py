@@ -54,8 +54,8 @@ class PlanarEndEffectorMover(object):
         self.Pee_x_real = msg.x
         self.Pee_y_real = msg.y
         self.Pee_z_real = msg.z
-        rospy.loginfo("Pxx_REAL=["+str(self.Pee_x_real)+","+str(self.Pee_y_real)+"] --- CHI="+str(self.Pee_z_real))
-        rospy.loginfo("Pxx_OBJE=["+str(self.Pee_x)+","+str(self.Pee_y)+"] --- CHI_real="+str(self.Pee_z))
+        rospy.loginfo("Pxx_REAL=["+str(self.Pee_x_real)+","+str(self.Pee_y_real)+","+str(self.Pee_z_real)+"]")
+        rospy.loginfo("Pxx_OBJE=["+str(self.Pee_x)+","+str(self.Pee_y)+","+str(self.Pee_z)+"]")
 
     def ee_pose_commands_callback(self, msg):
         self.Pee_x = msg.ee_xy_theta.x
@@ -63,7 +63,7 @@ class PlanarEndEffectorMover(object):
         self.Pee_z = msg.ee_xy_theta.z
         self.elbow_pol = msg.elbow_policy.data
         # calculate the inverse kinematics
-        theta_array, possible_solution = lib_calculate_ik.calculate_ik(des_x=self.Pee_x, des_y=self.Pee_y, des_z=self.Pee_z, elbow=self.elbow_pol)
+        theta_array, possible_solution = lib_calculate_ik.calculate_ik(des_x=self.Pee_x, des_y=self.Pee_y, des_z=self.Pee_z, elbow_config=self.elbow_pol)
 
         if possible_solution:
             theta_1 = theta_array[0]
@@ -71,7 +71,7 @@ class PlanarEndEffectorMover(object):
             theta_3 = theta_array[2]
             # move the robot to the new pose
             self.robot_mover.move_all_joints(theta_1, theta_2, theta_3)
-            self.markerbasics_object.publish_point(self.Pee_x, self.Pee_y, roll=self.Pee_z, index=self.unique_marker_index)
+            self.markerbasics_object.publish_point(self.Pee_x, self.Pee_y, self.Pee_z, index=self.unique_marker_index)
             self.unique_marker_index += 1 
         else:
             rospy.logerr("NO POSSIBLE SOLUTION FOUND, Robot Cant reach that pose")
